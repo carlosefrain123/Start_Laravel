@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Car;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +22,13 @@ class UserSeeder extends Seeder
             'password'=>Hash::make("12345678"),//TODO: Se importa use Illuminate\Support\Facades\Hash;
         ]);
         User::factory(17)->create();
-        
+        Car::create([//TODO: Se importa use App\Models\User;
+            'make'=>'Toyota',
+            'model'=>'X8R',
+            'year'=>2024,
+            'color'=>'Azul',
+        ]);
+        Car::factory(12)->create();
     }
     /**Se ejecuta el comando, despues de hacer esto. php artisan migrate:fresh --seed
 */

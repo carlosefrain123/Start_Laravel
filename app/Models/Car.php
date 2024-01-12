@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 //TODO: php artisan make:model car
 class Car extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'make',
         'model',
