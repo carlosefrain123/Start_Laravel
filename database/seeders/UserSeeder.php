@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             'password'=>Hash::make("12345678"),//TODO: Se importa use Illuminate\Support\Facades\Hash;
         ]);
         User::factory(17)->create();
+        
     }
     /**Se ejecuta el comando, despues de hacer esto. php artisan migrate:fresh --seed
 */
