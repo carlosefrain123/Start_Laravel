@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CarController;//TODO: Lo puedes encontrar en la clase de CarController.php
+use App\Http\Controllers\CarController; //TODO: Lo puedes encontrar en la clase de CarController.php
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//TODO: Esto es un ejemplo, si es administrador. Se va a la página
+/* Route::middleware(['admin'])->group(function () {
+    Route::get('/autos', [CarController::class, 'index']);
+}); */
 Route::get('/', function () {
     return view('welcome');
 });
 //TODO: Lo colocamos la ruta de Car
-Route::get('/autos',[CarController::class,'index']);
+Route::get('/autos', [CarController::class, 'index']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,4 +34,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
